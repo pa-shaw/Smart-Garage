@@ -1,2 +1,90 @@
 # Smart-Garage
 This contains the code for our smart garage and instructions on how to install the software needed for the project
+
+For this project we used some different open source software.  We used OpenCv, Tesseract-OCR, Leptonica, and openALPR. The first step in our project was getting all of this software installed on the pi. This was particularly difficult, as all of the software had to be compiled from the ground up, not just installed. The first step was to install all of the dependent libraries. The steps are as follows:
+
+sudo apt-get install autoconf automake libtool
+
+sudo apt-get install libpng12-dev
+
+sudo apt-get install libjpeg62-dev
+
+sudo apt-get install libtiff4-dev
+
+sudo apt-get install zlib1g-dev
+
+sudo apt-get install git-core
+
+sudo apt-get install cmake
+
+sudo apt-get install liblog4cplus-dev libcurl3-dev uuid-dev
+
+sudo apt-get install build-essential 
+
+the next step is to get the openALPR files on your pi. You can do this using these steps:
+
+cd /home/pi ) 
+
+git clone https://github.com/openalpr/openalpr.git
+
+next we made a directory to hold all of our software and got the files downloaded into the directory:
+
+cd openalpr
+
+mkdir libraries
+
+cd libraries
+
+git https://github.com/tesseract-ocr/tesseract.git
+
+git https://github.com/DanBloomberg/leptonica.gitwget
+
+git https://github.com/opencv/opencv.git 
+
+It’s also important to make sure that you get at least version 3.03 for Tesseract, and version 1.72 for Leptonica, otherwise the software will not work.
+
+The next step is to compile all of the software using the following steps.
+
+cd //Leptonica
+
+./configure
+
+make
+
+make install
+
+cd ../tesseract-ocr
+
+./autogen.sh
+
+./configure
+
+make
+
+sudo make install
+
+sudo ldconfig
+
+export TESSDATA_PREFIX=/home/pi/openalpr/libraries/tesseract-ocr/tessdata
+
+cd opencv-2.4.8
+
+mkdir release
+
+cd release
+
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..
+
+make
+
+sudo make install
+
+The next step is to compile openALPR, using these steps:
+
+cmake ./
+
+make
+
+sudo make install
+
+This whole process will take approximately 15-20 hours on the pi. The hardware that we used for this project was a motion sensor, a USB webcam, a relay, raspberry pi 2. We used the GPIO pins on the pi 2 to interface with the relay, USB webcam, and motion sensor.
