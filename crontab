@@ -1,0 +1,1 @@
+@reboot cd /home/pi/ && sh /home/pi/webcam/launcher.sh >/home/pi/logs/cronlog 2>&1
