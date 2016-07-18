@@ -1,4 +1,7 @@
-For this project we used some different open source software.  We used OpenCv, Tesseract-OCR, Leptonica, and openALPR. The first step in our project was getting all of this software installed on the pi. This was particularly difficult, as all of the software had to be compiled from the ground up, not just installed. The first step was to install all of the dependent libraries. The steps are as follows:
+For this project we used some different open source software.  We used OpenCv, Tesseract-OCR, Leptonica, and openALPR. 
+The first step in our project was getting all of this software installed on the pi. 
+This was particularly difficult, as all of the software had to be compiled from the ground up, not just installed. 
+The first step was to install all of the dependent libraries. The steps are as follows:
 
 sudo apt-get install autoconf automake libtool
 
@@ -38,7 +41,8 @@ git https://github.com/DanBloomberg/leptonica.gitwget
 
 git https://github.com/opencv/opencv.git 
 
-It’s also important to make sure that you get at least version 3.03 for Tesseract, and version 1.72 for Leptonica, otherwise the software will not work.
+It’s also important to make sure that you get at least version 3.03 for Tesseract, and version 1.72 for Leptonica, 
+otherwise the software will not work.
 
 The next step is to compile all of the software using the following steps.
 
@@ -84,4 +88,5 @@ make
 
 sudo make install
 
-This whole process will take approximately 15-20 hours on the pi. The hardware that we used for this project was a motion sensor, a USB webcam, a relay, raspberry pi 2. We used the GPIO pins on the pi 2 to interface with the relay, USB webcam, and motion sensor.
+This whole process will take approximately 15-20 hours on the pi. The hardware that we used for this project was a motion sensor, 
+a USB webcam, a relay, raspberry pi 2. We used the GPIO pins on the pi 2 to interface with the relay, USB webcam, and motion sensor.
