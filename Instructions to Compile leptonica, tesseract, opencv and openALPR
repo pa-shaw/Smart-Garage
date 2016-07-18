@@ -1,7 +1,4 @@
-For this project we used some different open source software.  We used OpenCv, Tesseract-OCR, Leptonica, and openALPR. 
-The first step in our project was getting all of this software installed on the pi. 
-This was particularly difficult, as all of the software had to be compiled from the ground up, not just installed. 
-The first step was to install all of the dependent libraries. The steps are as follows:
+For this project we used some different open source software.  We used OpenCv, Tesseract-OCR, Leptonica, and openALPR. The first step in our project was getting all of this software installed on the pi. This was particularly difficult, as all of the software had to be compiled from the ground up, not just installed. The first step was to install all of the dependent libraries. The steps are as follows:
 
 sudo apt-get install autoconf automake libtool
 
